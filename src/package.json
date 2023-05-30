@@ -4,14 +4,28 @@
   "description": "Registration-free user-oriented social network",
   "author": "TheRealPenpen <https://github.com/TheRealPenpen>, Appolinarium <https://github.com/appolinarium>",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "build:ssr": "nuxt build",
+    "build:ssg": "nuxt generate",
+    "dev": "nuxt dev --no-clear",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "clean": "nuxt clean",
+    "analyze": "nuxt analyze",
+    "proj-info": "nuxt info",
+    "proj-upgrade": "nuxt upgrade",
+    "build-preview": "nuxt build; nuxt preview",
+    "types": "nuxt typecheck",
+    "add-comp": "nuxt add component $1",
+    "add-compos": "nuxt add composable $1",
+    "add-lay": "nuxt add layout $1",
+    "add-plug": "nuxt add plugin $1",
+    "add-page": "nuxt add page $1",
+    "add-midd": "nuxt add middleware $1",
+    "add-api": "nuxt add api $1"
   },
   "devDependencies": {
     "@types/node": "^18",
-    "nuxt": "^3.5.1"
+    "nuxt": "^3.5.2",
+    "sass": "^1.62.1"
   }
 }
