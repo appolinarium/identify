@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  modules: ['@element-plus/nuxt'],
   app: {
     head: {
       meta: [

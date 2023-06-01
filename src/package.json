@@ -24,11 +24,11 @@
     "add-api": "nuxt add api $1"
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.0.5",
     "@types/node": "^18",
+    "element-plus": "^2.3.5",
     "nuxt": "^3.5.2",
     "sass": "^1.62.1"
   },
-  "dependencies": {
-    "vuetify": "^3.3.2"
-  }
+  "dependencies": {}
 }
