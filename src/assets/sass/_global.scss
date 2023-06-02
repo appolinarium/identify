@@ -5,11 +5,20 @@ $default-font-size: 16px;
 $primary: #F6F6F6;
 $secondary: #C9CFD9;
 
+$accent: #4FDDFB;
 
 $primary-bg: #1e2023;
 
-// relative font sizing
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
-@mixin font-size($initial, $factor) {
-  font-size: calc($initial + $factor)
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-Bold.ttf');
+  font-weight: 500;
+  font-style: normal; 
 }

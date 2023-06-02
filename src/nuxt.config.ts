@@ -1,5 +1,9 @@
 export default defineNuxtConfig({
   modules: ['@element-plus/nuxt'],
+  elementPlus: {
+    importStyle: 'scss',
+    icon: false,
+  },
   app: {
     head: {
       meta: [
@@ -19,7 +23,8 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/sass/_global.scss" as *;'
+          additionalData:
+            '@use "@/assets/sass/_global.scss" as *; @use "@/assets/sass/_resets.scss" as *; @use "@/node_modules/rfs/scss" as *;'
         }
       }
     }
