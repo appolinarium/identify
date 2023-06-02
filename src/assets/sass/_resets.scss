@@ -1,0 +1,9 @@
+@mixin pm-reset() {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin ul-reset() {
+  @include pm-reset();
+  list-style-type: none;
+} 
