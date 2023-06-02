@@ -1,0 +1,15 @@
+// global variables
+
+$default-font-size: 16px;
+
+$primary: #F6F6F6;
+$secondary: #C9CFD9;
+
+
+$primary-bg: #1e2023;
+
+// relative font sizing
+
+@mixin font-size($initial, $factor) {
+  font-size: calc($initial + $factor)
+}

@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  modules: ['@element-plus/nuxt'],
   app: {
     head: {
       meta: [
@@ -14,6 +15,15 @@ export default defineNuxtConfig({
     },
     rootId: '__app',
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/sass/_global.scss" as *;'
+        }
+      }
+    }
+  },
   build: {
     analyze: {
       analyzerMode: 'static'
@@ -25,5 +35,5 @@ export default defineNuxtConfig({
   extensions: [
     '.ts',
     '.vue'
-  ]
+  ],
 })
