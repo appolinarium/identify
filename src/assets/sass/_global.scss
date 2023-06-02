@@ -2,12 +2,18 @@
 
 $default-font-size: 16px;
 
-$primary: #F6F6F6;
+$primary-color: #F6F6F6;
+$bg-color: #1e2023;
+
 $secondary: #C9CFD9;
 
 $accent: #4FDDFB;
 
-$primary-bg: #1e2023;
+
+:root {
+  --el-color-primary: #{$primary-color};
+  --el-bg-color: #{$bg-color};
+}
 
 @font-face {
   font-family: 'Inter';
@@ -21,4 +27,11 @@ $primary-bg: #1e2023;
   src: url('/fonts/inter/Inter-Bold.ttf');
   font-weight: 500;
   font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato/Lato-Black.ttf');
+  font-weight: 900;
+  font-style: normal;
 }

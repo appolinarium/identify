@@ -17,7 +17,3 @@
   </ul>
   <slot />
 </template>
-
-<style scoped>
-
-</style>
