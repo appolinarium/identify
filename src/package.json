@@ -24,10 +24,9 @@
     "add-api": "nuxt add api $1"
   },
   "devDependencies": {
-    "@element-plus/nuxt": "^1.0.5",
     "@types/node": "^18",
-    "element-plus": "^2.3.5",
     "nuxt": "^3.5.2",
+    "primevue": "^3.29.2",
     "rfs": "^10.0.0",
     "sass": "^1.62.1"
   },

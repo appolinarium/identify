@@ -1,9 +1,8 @@
 export default defineNuxtConfig({
-  modules: ['@element-plus/nuxt'],
-  elementPlus: {
-    importStyle: 'scss',
-    icon: false,
-  },
+  css: [
+        "primevue/resources/themes/lara-light-blue/theme.css",
+        "primevue/resources/primevue.css"
+    ],
   app: {
     head: {
       meta: [
@@ -32,7 +31,8 @@ export default defineNuxtConfig({
   build: {
     analyze: {
       analyzerMode: 'static'
-    }
+    },
+    transpile: ["primevue"]
   },
   devServer: {
     port: 8080
