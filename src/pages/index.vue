@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="welcome">
-    <h1>Entry page<h2>
+    <Button label="Test Button"></Button>
   </NuxtLayout>
 
 </template>
