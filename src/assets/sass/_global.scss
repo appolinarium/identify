@@ -31,6 +31,13 @@ $accent: #4FDDFB;
 
 @font-face {
   font-family: 'Lato';
+  src: url('/fonts/lato/Lato-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
   src: url('/fonts/lato/Lato-Black.ttf');
   font-weight: 900;
   font-style: normal;
