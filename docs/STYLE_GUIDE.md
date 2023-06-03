@@ -35,5 +35,14 @@ Available labels:
 - replacement
 - remove
 - config
-- other
 - initial
+- docs
+- other
+
+## Branches
+
+### Naming
+
+Branches should be named in lower and kebab case. Example:
+
+```auth-form-component```
