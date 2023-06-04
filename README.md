@@ -32,7 +32,7 @@ Refer to [Translation contributing guide](https://github.com/appolinarium/identi
 
 ## Stars
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwXzlMbk00ZkVZSFpqaE41R1NFT2tSd3hjTjJlNXMyaTFSTjh4Mg==#appolinarium/identify&Date" frameBorder="0"></iframe>
+![Star History Chart](https://api.star-history.com/svg?repos=appolinarium/identify&type=Date)
 
 ## License
 
