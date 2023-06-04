@@ -6,12 +6,14 @@
                 :value="val"
                 :checked="val === modelValue"
                 @change="changeInput"
+                >
 
-        >
         <label  :for="label"
-                :class="{'radio__label':true,'radio__label--checked': val === modelValue}"
-        >
-        {{label}}</label>
+                class="radio__label"
+                :class="{'radio__label--checked': val === modelValue}"
+                >
+            {{label}}
+        </label>
     </span>
 </template>
 
@@ -45,8 +47,6 @@
         &--checked{
             color: $accent;
         }
-        
     }
 }
-
 </style>

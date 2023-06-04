@@ -1,13 +1,8 @@
 <template>
-    <div class="radio-group"
-        >
+    <div class="radio-group">
         <slot></slot>
     </div>
 </template>
-
-<script setup lang="ts">
-
-</script>
 
 <style scoped lang="scss">
 .radio-group{

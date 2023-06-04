@@ -8,7 +8,6 @@
   function changeLang(e){
     state.value = e
   }
-
 </script>
 
 <template>
@@ -20,11 +19,5 @@
       v-model="lang"
       >
     </InputRadioButton>
-
   </GroupsRadioGroups>
 </template>
-
-
-<style lang="scss">
-
-</style>
