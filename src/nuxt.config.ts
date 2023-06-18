@@ -40,16 +40,23 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
   i18n: {
+    lazy: true,
     strategy: 'prefix_except_default',
     defaultLocale: 'en',
     langDir: 'localization',
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+      fallbackLocale: 'en',
+    },
     locales: [
       {
-      code: 'en',
-      file: 'en.json'
+        code: 'en',
+        name: 'English',
+        file: 'en.json'
       },
       {
         code: 'ru',
+        name: 'Русский',
         file: 'ru.json'
       }],
   }

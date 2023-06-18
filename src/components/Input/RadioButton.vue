@@ -1,34 +1,34 @@
-<template>
-    <span class="radio">
-        <input  class="radio__input"
-                type="radio"
-                :id="label"
-                :value="val"
-                :checked="val === modelValue"
-                @change="changeInput"
-                >
-
-        <label  :for="label"
-                class="radio__label"
-                :class="{'radio__label--checked': val === modelValue}"
-                >
-            {{label}}
-        </label>
-    </span>
-</template>
-
 <script setup lang="ts">
     const props = defineProps({
-        label: String,
-        val: String,
+        obj: Object,
         modelValue: String,
     })
     const emits = defineEmits(['update:modelValue'])
 
-    function changeInput(event){
-        emits('update:modelValue',event.target.value)
+    function changeInput(){
+        emits('update:modelValue',props.obj.code)
     }
 </script>
+
+<template>
+    <span class="radio">
+        <input  class="radio__input"
+                type="radio"
+                :id="obj.code"
+                :value="obj.code"
+                :checked="obj.code === modelValue"
+                @change="changeInput"
+                >
+
+        <label  :for="obj.code"
+                class="radio__label"
+                :class="{'radio__label--checked': obj.code === modelValue}"
+                >
+            {{obj.name}}
+        </label>
+    </span>
+</template>
+
 
 <style lang="scss">
 .radio{
