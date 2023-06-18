@@ -1,2 +1,41 @@
 {
+  "!comment": "general entities",
+
+  "app": {
+    "description": "Registration-free user-oriented social network"
+  },
+  "tip": {
+    "privateKey": {
+      "content": "Private keys are personal user identifiers used for authorization in the system. They are based on symmetric encryption and use Identify optimizing systems to improve performance. Read more in the",
+      "accent": "development guide."
+    },
+    "copied": "Copied to clipboard"
+  },
+  "input": {
+    "key": {
+      "placeholder": "Type your private key"
+    }
+  },
+  "checkbox": {
+    "license": "I confirm the license agreement",
+    "saveSession": "Save session in browser"
+  },
+  "button": {
+    "submit": {
+      "authorize": {
+        "signup": "signup",
+        "login": "login"
+      }
+    }
+  },
+  "sourceCode": "Source code",
+
+  "!comment": "per-page entities",
+
+  "entry": {
+    "subtitle": {
+      "content": "users already just remembered the",
+      "accent": "private key"
+    }
+  }
 }
