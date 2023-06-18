@@ -36,4 +36,21 @@ export default defineNuxtConfig({
     '.ts',
     '.vue'
   ],
+  modules: [
+    '@nuxtjs/i18n',
+  ],
+  i18n: {
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    langDir: 'localization',
+    locales: [
+      {
+      code: 'en',
+      file: 'en.json'
+      },
+      {
+        code: 'ru',
+        file: 'ru.json'
+      }],
+  }
 })
