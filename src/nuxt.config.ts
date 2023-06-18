@@ -58,6 +58,11 @@ export default defineNuxtConfig({
         code: 'ru',
         name: 'Русский',
         file: 'ru.json'
+      },
+      {
+        code: 'be',
+        name: 'Беларуская (тарашкевiца)',
+        file: 'be.json'
       }],
   }
 })
