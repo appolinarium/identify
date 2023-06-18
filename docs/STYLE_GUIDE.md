@@ -1,48 +1,76 @@
 # Project style & naming convention
 
+Describes exclusively stylistic solutions and conventions to simplify work and increase productivity.
+
 ## Documentation
 
-### Naming
+Each documentation file must be:
 
-Each documentation file name in `md` format must be named in
+- in `md` format
+- NAMED_IN_UPPER_SNAKE_CASE
 
-UPPER_SNAKE_CASE
+Any documentation file must match the following format:
 
-### Format
+1. Title
+2. Short file description
+3. h2 topics and their content
 
-Necessarily:
+**TIP:** *it is better to have several files with links to one another than one huge file.*
 
-- Title
-- Short file description
-- topics with titles no further than h3
-- it is better to have several files with links to one another than one huge one
+Custom documentation entities in format `Entity - template`:
+
+- Documentation file header
+```
+# H1
+File description.
+```
+
+- Tip
+```
+**TIP:** *some tip.*
+```
 
 ## Commits
 
-### Naming
+Commit comments must match the following format:
 
-```change name also know as label: Short description of changes```
+```
+label/s: Description
+```
 
-for multiple joins of changes in one commit, use curly brackets. Example:
-
-```integration: { Sass, Rfs }```
-
-But try to avoid a lot of changes in 1 comit. It is better to divide in 2 and more
+Labels are short designations of actions performed in the commits, the full content and purpose of which is known to all project participants. This will help to make more succinct descriptions and reduce the effort spent on them.There can be several labels in one comment.
 
 Available labels:
 
 - integration
-- replacement
+- replace
+- move
 - remove
+- fix
 - config
 - initial
 - docs
+- upgrade
+- globals
+- code
+- localization
+- media
 - other
+
+**TIP:** *divide commits so that they contain one clear logical change. Don't make multiple changes in one commit.*
 
 ## Branches
 
-### Naming
+Branches should be named in:
 
-Branches should be named in lower and kebab case. Example:
+- lower-kebab-case
 
-```auth-form-component```
+if you have a subbranches, name it according to the example:
+
+```
+form (main branch)
+  |
+  form-submit-button (subbranch)
+    |
+    form-submit-button-tip (3-level nested branch)
+```
