@@ -1,22 +1,25 @@
 <script setup lang="ts">
-  const props = defineProps({
-    languages: Array
+  const { locale, locales, setLocale } = useI18n()
+  const switchLocalePath = useSwitchLocalePath()
+  const availableLocales = computed(() => {
+  return (locales.value)
   })
-  const lang = ref('')
-  const state = useState('lang', () => 'en')
-  watch(lang,(newV) => {changeLang(newV)} )
-  function changeLang(e){
-    state.value = e
+  const router = useRouter()
+  const lang = ref(locale)
+  function changeLang(){
+     setLocale(lang.value)
+     router.push(switchLocalePath(lang.value))
   }
+ 
 </script>
 
 <template>
   <GroupsRadioGroups>
     <InputRadioButton   
-      v-for="(item,index) in languages"
-      :label="item.name"
-      :val="item.key"
+      v-for="loc in availableLocales"
+      :obj="loc"
       v-model="lang"
+      @change="changeLang"
       >
     </InputRadioButton>
   </GroupsRadioGroups>
