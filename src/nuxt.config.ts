@@ -1,3 +1,5 @@
+import svgLoader from 'vite-svg-loader'
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -15,6 +17,9 @@ export default defineNuxtConfig({
     rootId: '__app',
   },
   vite: {
+    plugins: [
+	svgLoader()
+    ],
     css: {
       preprocessorOptions: {
         scss: {
