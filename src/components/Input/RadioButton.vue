@@ -31,6 +31,8 @@
 
 
 <style lang="scss">
+@use 'sass:map';
+
 .radio{
     padding: 1%;
     &__input{
@@ -41,11 +43,12 @@
         font-family: 'Lato';
         @include font-size(14px);
         font-weight: 400;
+        cursor: pointer;
         &:hover{
             color: #fff;
         }
         &--checked{
-            color: $accent;
+            color: map.get($colors, 'fourthy');
         }
     }
 }
