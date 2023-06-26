@@ -14,7 +14,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--el-color-primary);
 
     &__action {
       @include pm-reset();
