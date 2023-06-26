@@ -6,7 +6,7 @@
   "scripts": {
     "build:ssr": "nuxt build",
     "build:ssg": "nuxt generate",
-    "dev": "nuxt dev --no-clear",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --no-clear --https --ssl-cert localhost.crt --ssl-key localhost.decrypted.key",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "clean": "nuxt clean",
