@@ -2,20 +2,21 @@
 
 $default-font-size: 16px;
 
-$primary-color: #F6F6F6;
-$bg-color: #1e2023;
-$border-gray: #353945;
-$filler: #1a1b1f;
+// colors
+$colors: (
+  // foreground colors, ie text, borders etc
+  'primary': #F6F6F6,
+  'secondary': #C9CFD9,
+  'thirdy': #353945,
+  'fourthy': #4FDDFB,
 
-$secondary: #C9CFD9;
-$light-accent: #67cde0;
-$accent: #4FDDFB;
+  // background colors
+  'primary-bg': #1e2023,
+  'secondary-bg': #1A1B1F,
+  'thirdy-bg': #67CDE0
+);
 
-
-:root {
-  --el-color-primary: #{$primary-color};
-  --el-bg-color: #{$bg-color};
-}
+// fonts
 
 @font-face {
   font-family: 'Inter';
@@ -26,15 +27,15 @@ $accent: #4FDDFB;
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/inter/Inter-Medium.ttf');
+  src: url('/fonts/inter/Inter-SemiBold.ttf');
   font-weight: 500;
-  font-style: normal; 
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Lato';
   src: url('/fonts/lato/Lato-Regular.ttf');
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
 }
 

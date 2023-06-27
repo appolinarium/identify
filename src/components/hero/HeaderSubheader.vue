@@ -26,6 +26,8 @@
 </template>
 
 <style scoped lang="scss">
+  @use 'sass:map';
+
   .hero {
     &__header {
       @include pm-reset();
@@ -35,6 +37,7 @@
       font-family: 'Inter';
       font-weight: 500;
       text-align: center;
+      color: map.get($colors, 'primary');
     }
 
     &__subheader {
