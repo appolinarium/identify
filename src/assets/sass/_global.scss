@@ -4,9 +4,11 @@ $default-font-size: 16px;
 
 $primary-color: #F6F6F6;
 $bg-color: #1e2023;
+$border-gray: #353945;
+$filler: #1a1b1f;
 
 $secondary: #C9CFD9;
-
+$light-accent: #67cde0;
 $accent: #4FDDFB;
 
 
@@ -24,7 +26,7 @@ $accent: #4FDDFB;
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/inter/Inter-Bold.ttf');
+  src: url('/fonts/inter/Inter-Medium.ttf');
   font-weight: 500;
   font-style: normal; 
 }

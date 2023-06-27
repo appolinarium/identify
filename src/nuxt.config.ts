@@ -45,7 +45,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
   i18n: {
-    lazy: true,
     langDir: './locales',
     strategy: 'prefix_except_default',
     defaultLocale: 'en',

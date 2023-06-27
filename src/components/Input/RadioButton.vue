@@ -1,52 +1,93 @@
 <script setup lang="ts">
+    const { locale,locales } = useI18n()
     const props = defineProps({
         obj: Object,
         modelValue: String,
     })
     const emits = defineEmits(['update:modelValue'])
-
+    
     function changeInput(){
         emits('update:modelValue',props.obj.code)
     }
 </script>
 
 <template>
-    <span class="radio">
-        <input  class="radio__input"
-                type="radio"
-                :id="obj.code"
-                :value="obj.code"
-                :checked="obj.code === modelValue"
-                @change="changeInput"
-                >
-
-        <label  :for="obj.code"
-                class="radio__label"
-                :class="{'radio__label--checked': obj.code === modelValue}"
-                >
-            {{obj.name}}
-        </label>
+    <span class="centered">
+        <input
+            :id="obj.code"               
+            type="checkbox" 
+            :class="locale === 'ru' ? 'checkbox_ru' : 'checkbox'" 
+            @change="changeInput"
+            >
+        <label
+            :for="obj.code" 
+            :class="locale === 'ru' ? 'checkbox_ru__label' : 'checkbox__label'"
+            >{{ obj.name}}</label>
     </span>
 </template>
 
+<style scoped lang="scss">
+    .centered{
+        display: flex;
+    }
+    .checkbox{
+        appearance: none;
+        border: 2px solid $border-gray;
+        border-radius: 3px;
+        margin: 0 4px;
+        width: 1rem;
+        height: 1rem;
+        
+        &__label{
+            font-family: 'Lato';
+            color: white;
+            @include font-size(13px);
+            @include rfs(.8px,letter-spacing);
+            
+        }
+    }
+    .checkbox_ru{
+        appearance: none;
+        border: 2px solid $border-gray;
+        border-radius: 3px;
+        margin: 0 4px;
+        width: 1rem;
+        height: 1rem;
+        
+        &__label{
+            font-family: 'Lato';
+            color: white;
+            @include font-size(13px);
+            @include rfs(.8px,letter-spacing);
+            
+        }
+    }
+    .checkbox:checked{
+        background-color: $accent;
+        &::before{
+            content: 'V';
+            padding-left: 1.5px;
+        }
+        animation: 1s 1;
+        animation-name: click;
+    }
 
-<style lang="scss">
-.radio{
-    padding: 1%;
-    &__input{
-        display: none;
-    }
-    &__label{
-        color: #c9cfd9;
-        font-family: 'Lato';
-        @include font-size(14px);
-        font-weight: 400;
-        &:hover{
-            color: #fff;
+    .checkbox_ru:checked{
+        background-color: $accent;
+        &::before{
+            content: 'Z';
+            padding-left: 2px;
         }
-        &--checked{
-            color: $accent;
+        animation: 1s 1;
+        animation-name: click;
+    }
+
+    @keyframes click {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 100%;
         }
     }
-}
 </style>
