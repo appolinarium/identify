@@ -1,7 +1,3 @@
-<script setup>
-  const count = ref(0)
-</script>
-
 <template>
 
   <HeroHeaderSubheader>
@@ -10,32 +6,31 @@
     </template>
 
     <template #subheader>
-      {{ count }} {{ $t('entry.subtitle.content') }} <a href="#">{{$t('entry.subtitle.accent') }}</a>
+      <CounterUsers /> {{ $t('entry.subtitle.content') }} <a href="#">{{$t('entry.subtitle.accent') }}</a>
     </template>
 
     <template #action>
       <InputSignUp/>
     </template>
+
   </HeroHeaderSubheader>
-  <footer>
-    <TextCopyright name="Identify"/>
-    <ListLanguages/>
-    <span>
-      <IconGithub fill="white"/>
-      <span>{{$t('sourceCode')}}</span>
-    </span>
-  </footer>
+
+  <FooterThreeColumns />
+
 </template>
 
 <style lang="scss">
+  @use 'sass:map';
+
  #__app,body,#index,html{
     height: 100vh;
  }
   html{
-    background-color: $bg-color;
+    background-color: map.get($colors, 'primary-bg');
   }
+
   a{
-    color: $accent;
+    color: map.get($colors, 'fourthy');
   }
   
   .hero{
@@ -57,6 +52,6 @@
     
   }
   .checkbox__label{
-    color: $secondary !important;
+    color: map.get($colors, 'secondary') !important;
   }
 </style>

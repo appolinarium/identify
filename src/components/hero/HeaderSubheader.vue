@@ -44,7 +44,7 @@
       @include font-size(16px);
       @include rfs(1.2px,letter-spacing);
       font-weight: 400;
-      color: $secondary;
+      color: map.get($colors, 'secondary');
       font-family: 'Inter';
       text-align: center;
     }

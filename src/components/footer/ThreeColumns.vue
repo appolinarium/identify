@@ -5,7 +5,7 @@
 <template>
   <FooterBase class="three-columns-footer">
     <div class="three-columns-footer__item">
-      © Identify {{ new Date().getFullYear() }}
+      <TypeCopyright name="Identify"/>
     </div>
     <div class="three-columns-footer__item">
       <ListLanguages />
@@ -14,7 +14,7 @@
       <NuxtLink to="documentation">
         documentation
       </NuxtLink>
-      <GithubIcon fill="red" />
+      <GithubIcon fill="white" />
       {{ $t('sourceCode') }}
     </div>
   </FooterBase>

@@ -14,9 +14,10 @@
 </template>
 
 <style scoped lang="scss">
+  @use 'sass:map';
     .button{
         cursor: pointer;
-        background-color: $light-accent;
+        background-color: map.get($colors, 'thirdy-bg');
         font-family: 'Inter';
         font-weight: 500;
         font-size: 12;
@@ -24,9 +25,9 @@
         border-radius: 4px;
         letter-spacing: 1px;
         line-height: 1.2;
-        border: 1px solid $accent;
+        border: 1px solid map.get($colors, 'fourthy');
         text-transform: uppercase;
         align-self: center;
-        color: $filler;
+        color: map.get($colors, 'thirdy');
     }
 </style>

@@ -20,11 +20,12 @@
 </template>
 
 <style scoped lang="scss">
+  @use 'sass:map';
     .input{
         display: flex;
         gap: 10px;
-        background-color: $filler;
-        border: 1px solid $border-gray;
+        background-color: map.get($colors, 'secondary-bg');
+        border: 1px solid map.get($colors, 'thirdy');
         border-radius: 4px;
         padding: 16px 38px;
 

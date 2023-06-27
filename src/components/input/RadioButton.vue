@@ -27,12 +27,14 @@
 </template>
 
 <style scoped lang="scss">
+  @use 'sass:map';
+
     .centered{
         display: flex;
     }
     .checkbox{
         appearance: none;
-        border: 2px solid $border-gray;
+        border: 2px solid map.get($colors, 'thirdy');
         border-radius: 3px;
         margin: 0 4px;
         width: 1rem;
@@ -40,7 +42,7 @@
         
         &__label{
             font-family: 'Lato';
-            color: white;
+            color: map.get($colors, 'primary');
             @include font-size(13px);
             @include rfs(.8px,letter-spacing);
             
@@ -48,7 +50,7 @@
     }
     .checkbox_ru{
         appearance: none;
-        border: 2px solid $border-gray;
+        border: 2px solid map.get($colors, 'thirdy');
         border-radius: 3px;
         margin: 0 4px;
         width: 1rem;
@@ -56,14 +58,14 @@
         
         &__label{
             font-family: 'Lato';
-            color: white;
+            color: map.get($colors, 'primary');
             @include font-size(13px);
             @include rfs(.8px,letter-spacing);
             
         }
     }
     .checkbox:checked{
-        background-color: $accent;
+        background-color: map.get($colors, 'fourthy');
         &::before{
             content: 'V';
             padding-left: 1.5px;
@@ -73,7 +75,7 @@
     }
 
     .checkbox_ru:checked{
-        background-color: $accent;
+        background-color: map.get($colors, 'fourthy');
         &::before{
             content: 'Z';
             padding-left: 2px;
