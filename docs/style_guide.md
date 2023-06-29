@@ -1,3 +1,8 @@
+---
+layout: default
+header: Indentify
+title: Indentify official documentation
+---
 # Project style & naming convention
 
 Describes exclusively stylistic solutions and conventions to simplify work and increase productivity.

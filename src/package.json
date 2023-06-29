@@ -6,7 +6,7 @@
   "scripts": {
     "build:ssr": "nuxt build",
     "build:ssg": "nuxt generate",
-    "dev": "nuxt dev --no-clear",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --no-clear --https --ssl-cert localhost.crt --ssl-key localhost.decrypted.key",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "clean": "nuxt clean",
@@ -24,10 +24,13 @@
     "add-api": "nuxt add api $1"
   },
   "devDependencies": {
+    "@pinia/nuxt": "^0.4.11",
     "@types/node": "^18",
+    "bootstrap-icons": "^1.10.5",
     "nuxt": "^3.5.2",
     "rfs": "^10.0.0",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "vite-svg-loader": "^4.0.0"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^8.0.0-beta.12"
