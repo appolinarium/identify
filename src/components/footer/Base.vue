@@ -1,13 +1,16 @@
 <template>
   <footer class="base-footer">
-    <slot />
+    <slot>
+
+    </slot>
+    
   </footer>
 </template>
 
 <style lang="scss">
   .base-footer {
     @include pm-reset();
-    @include padding(4px 10px);
+    @include padding(24px 100px);
     display: flex;
     flex-wrap: wrap;
   }

@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <GroupsRadioGroups class="languages">
+  <GroupRadio class="languages">
     <InputLanguageRadio   
       v-for="loc in availableLocales"
       :obj="loc"
@@ -23,11 +23,11 @@
       @change="changeLang"
       >
     </InputLanguageRadio>
-  </GroupsRadioGroups>
+  </GroupRadio>
 </template>
 
 <style scoped lang="scss">
   .languages{
-    gap: 20px;
+    display: flex;
   }
 </style>

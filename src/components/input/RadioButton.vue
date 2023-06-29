@@ -12,84 +12,63 @@
 </script>
 
 <template>
-    <span class="centered">
+    <label
+        class="checkbox">
+        
         <input
-            :id="obj.code"               
             type="checkbox" 
-            :class="locale === 'ru' ? 'checkbox_ru' : 'checkbox'" 
+            class="checkbox__field"
             @change="changeInput"
             >
-        <label
-            :for="obj.code" 
-            :class="locale === 'ru' ? 'checkbox_ru__label' : 'checkbox__label'"
-            >{{ obj.name}}</label>
-    </span>
+        <span
+            class="checkbox__checkmark"></span>
+
+        <span
+            class="checkbox__label"
+            >{{ obj.name}}</span>
+    </label>
 </template>
 
 <style scoped lang="scss">
   @use 'sass:map';
 
-    .centered{
-        display: flex;
-    }
     .checkbox{
-        appearance: none;
-        border: 2px solid map.get($colors, 'thirdy');
-        border-radius: 3px;
-        margin: 0 4px;
-        width: 1rem;
-        height: 1rem;
+        display: flex;
+        align-items: center;
+
+        &__field{
+            display: none;
+            
+        }
         
+        &__checkmark{
+            border: 2px solid map.get($colors, 'thirdy');
+            border-radius: 3px;
+            margin: 0 6px;
+            width: 1rem;
+            height: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.2s linear;
+            
+        }
+
+        & input:checked + &__checkmark{
+            background: map.get($colors, 'thirdy-bg') url('@/node_modules/bootstrap-icons/icons/x.svg') center/130% no-repeat;
+
+        }
+
         &__label{
             font-family: 'Lato';
             color: map.get($colors, 'primary');
             @include font-size(13px);
             @include rfs(.8px,letter-spacing);
-            
+            cursor: pointer;
         }
     }
-    .checkbox_ru{
-        appearance: none;
-        border: 2px solid map.get($colors, 'thirdy');
-        border-radius: 3px;
-        margin: 0 4px;
-        width: 1rem;
-        height: 1rem;
-        
-        &__label{
-            font-family: 'Lato';
-            color: map.get($colors, 'primary');
-            @include font-size(13px);
-            @include rfs(.8px,letter-spacing);
-            
-        }
-    }
+    
     .checkbox:checked{
         background-color: map.get($colors, 'fourthy');
-        &::before{
-            content: 'V';
-            padding-left: 1.5px;
-        }
-        animation: 1s 1;
-        animation-name: click;
-    }
-
-    .checkbox_ru:checked{
-        background-color: map.get($colors, 'fourthy');
-        &::before{
-            content: 'Z';
-            padding-left: 2px;
-        }
-        animation: 1s 1;
-        animation-name: click;
-    }
-
-    @keyframes click {
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 100%;
-        }
+        
     }
 </style>

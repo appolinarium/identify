@@ -3,10 +3,16 @@
     import ClipboardChecked from '@/node_modules/bootstrap-icons/icons/clipboard-check.svg'
     import AddNew from '@/node_modules/bootstrap-icons/icons/key.svg'
 
-    const copied = ref(false)
-    watch(copied, (newV) => {
-        if(copied.value){
-            setTimeout(() => copied.value = !copied.value,800)
+    const copyClick = ref(false)
+    const keyClick = ref(false)
+    watch(copyClick, (newV) => {
+        if(copyClick.value){
+            setTimeout(() => copyClick.value = !copyClick.value,800)
+        }
+    } )
+    watch(keyClick, (newV) => {
+        if(keyClick.value){
+            setTimeout(() => keyClick.value = !keyClick.value,1000)
         }
     } )
 
@@ -15,34 +21,57 @@
 
 <template>
     <div class="flex">
-        <InputBase :prompt="$t('input.key.placeholder')">
-            <AddNew fill="white"
-                    width='25px'
-                    height="25px"
-                    viewBox="0,0,20,20"
-                    class="button"
-                    />
+        <InputBase 
+            :prompt="$t('input.key.placeholder')"
+            class="centered"
+            >
+            <AddNew 
+                fill="white"
+                width='100%'
+                height="21px"
+                viewBox="0,0,16,16"
+                class="button"
+                :class="keyClick == false ? 'button--icon' : 'button--icon--key-animated'"
+                @click="keyClick = !keyClick "
+                />
             <Clipboard
-            v-if="!copied"
-            class="button"
-            fill="white"
-            @click="copied = !copied "
-            />
+                v-if="!copyClick"
+                class="button"
+                fill="white"
+                width='100%'
+                height="21px"
+                viewBox="0,0,20,16"
+                @click="copyClick = !copyClick "
+                />
             <ClipboardChecked
-            v-if="copied"
-            class="button button--animated"
-            fill="white"
-            />
+                v-if="copyClick"
+                class="button button--icon--copy-animated"
+                fill="white"
+                width='100%'
+                height="21px"
+                viewBox="0,0,20,16"
+                />
         </InputBase >
 
-        <InputButton :text="$t('button.submit.authorize.signup')"/>
+        <InputButton
+            :text="$t('button.submit.authorize.signup')"
+            class="button button--main"
+            />
         
     </div>
-    <GroupsRadioGroups
+    <GroupRadio
         class="checkboxes">
-        <InputRadioButton :obj="{name:$t('checkbox.license'),code:'license'}"/>
-        <InputRadioButton  :obj="{name:$t('checkbox.saveSession'),code:'savesession'}"/>
-    </GroupsRadioGroups>
+        <div class="checkboxes__item-wrap">
+            <InputRadioButton 
+                :obj="{name:$t('checkbox.license'),code:'license'}"
+                :modelValue="selectedFlags"
+                />
+            <InputRadioButton  
+                :obj="{name:$t('checkbox.saveSession'),code:'savesession'}"
+                :modelValue="selectedFlags"
+                />
+        </div>
+    </GroupRadio>
 </template>
 
 <style scoped lang="scss">
@@ -52,14 +81,30 @@
         @include rfs(64px,gap);
     }
     .button{
-        &--animated{
-            animation: 1s 1;
-            animation-name: click;
-        }
         cursor: pointer;
+        &--icon{
+            // tooltip here
+            &--copy-animated{
+                animation: 1s;
+                animation-name: copyClick;
+            }
+            &--key-animated{
+                animation: 1s;
+                animation-name: newKey;
+            }
+        }
+        &--main{
+            transition: box-shadow .5s linear;
+            &:hover{
+                box-shadow: inset 0 0 10px 2px #00745a;
+            }
+            &--animated{
+                animation: 1s 1;
+                animation-name: click;
+            }
+        }
     }
-
-    @keyframes click {
+    @keyframes copyClick {
         0%{
             opacity: 0;
         }
@@ -67,10 +112,23 @@
             opacity: 100%;
         }
     }
+    @keyframes newKey {
+        0%{
+            transform: rotate(0);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
 
     .checkboxes{
-        gap: 20px;
-        padding: 20px 140px 0 0;
-        
+        display: flex;
+        justify-content: center;
+        @include padding (20px 0 );
+
+        &__item-wrap{
+            display: flex;
+            gap: 20px;
+        }
     }
 </style>

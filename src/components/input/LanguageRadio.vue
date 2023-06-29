@@ -36,9 +36,11 @@
 .radio{
     padding: 1%;
     &__input{
+        cursor: pointer;
         display: none;
     }
     &__label{
+        cursor: pointer;
         color: #c9cfd9;
         font-family: 'Lato';
         @include font-size(14px);

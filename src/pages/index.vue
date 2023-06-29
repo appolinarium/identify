@@ -15,7 +15,7 @@
 
   </HeroHeaderSubheader>
 
-  <FooterThreeColumns />
+  <FooterIndexFooter/>
 
 </template>
 
@@ -40,6 +40,7 @@
     }
 
   }
+
   footer{
     display: flex;
     justify-content: space-between;
@@ -51,6 +52,7 @@
     box-sizing: border-box;
     
   }
+
   .checkbox__label{
     color: map.get($colors, 'secondary') !important;
   }
