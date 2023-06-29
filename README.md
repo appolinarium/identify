@@ -13,18 +13,9 @@ To use this social network, you do not need a mobile phone number, email, or any
 - Socket.io
 
 ---
+## Contributing and development
 
-## Key & breaking changes
-
-Refer to [Key & breaking changes](https://github.com/appolinarium/indentify/blob/main/docs/CHANGES.md)
-
-## Contribution guide
-
-Refer to [Contributing guide](https://github.com/appolinarium/indentify/blob/main/docs/CONTRIBUTING.md)
-
-## Translation
-
-Refer to [Translation guide](https://github.com/appolinarium/indentify/blob/main/docs/TRANSLATION.md)
+Visit project [Detailed documentation](https://appolinarium.github.io/indentify/)
 
 ---
 
