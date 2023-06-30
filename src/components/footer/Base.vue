@@ -1,12 +1,14 @@
 <template>
   <footer class="base-footer">
-    <slot />
+    <slot>
+    </slot>
   </footer>
 </template>
 
 <style lang="scss">
   .base-footer {
-    @include padding(4px 10px);
+    @include pm-reset();
+    @include padding(24px 100px);
     display: flex;
     flex-wrap: wrap;
   }

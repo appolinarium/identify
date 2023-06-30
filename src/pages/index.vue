@@ -1,54 +1,59 @@
-<script setup lang="ts">
-  import forge from 'node-forge'
-
-  const rsa = forge.pki.rsa
-  rsa.generateKeyPair({bits: 2048, workers: 2}, function(err, keypair) {
-  console.log(keypair)
-  })
-
-  const usersCounter = ref(999)
-  const key = ref(123)
-</script>
-
 <template>
-  <h1>{{key}}</h1>
-  <div class="entry">
-    <main class="content">
 
-      <HeroHeaderSubheader>
-        <template #header>
-          {{$t('app.description')}}
-        </template>
+  <HeroHeaderSubheader>
+    <template #header>
+      {{$t('app.description')}}
+    </template>
 
-        <template #subheader>
-          {{ `${usersCounter} ${$t('entry.subtitle.content')} ${$t('entry.subtitle.accent')}`}}
-        </template>
+    <template #subheader>
+      <CounterUsers /> {{ $t('entry.subtitle.content') }} <a href="#">{{$t('entry.subtitle.accent') }}</a>
+    </template>
 
-        <template #action>
-          <FormAuth />
-        </template>
-      </HeroHeaderSubheader>
+    <template #action>
+      <InputSignUp/>
+    </template>
 
-    </main>
+  </HeroHeaderSubheader>
 
-    <FooterThreeColumns />
-  </div>
+  <FooterIndexFooter/>
+
 </template>
 
 <style lang="scss">
-@use 'sass:map';
+  @use 'sass:map';
 
-body {
-  background-color: map.get($colors, 'primary-bg');
-}
+ #__app,body,#index,html{
+    height: 100vh;
+ }
+  html{
+    background-color: map.get($colors, 'primary-bg');
+  }
 
-.entry {
-  @include padding(24px 100px);
-}
+  a{
+    color: map.get($colors, 'fourthy');
+  }
+  
+  .hero{
+    @include padding(120px 330px);
+    &__subheader{
+      @include margin(20px 0);
+    }
 
-.content {
-  @include padding(0 190px);
-  @include padding-top(115px);
-  @include padding-bottom(125px);
-}
+  }
+
+  footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 110px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    
+  }
+
+  .checkbox__label{
+    color: map.get($colors, 'secondary') !important;
+  }
 </style>

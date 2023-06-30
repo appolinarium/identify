@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
   const { locale, locales, setLocale } = useI18n()
   const switchLocalePath = useSwitchLocalePath()
   const availableLocales = computed(() => {
@@ -14,13 +15,19 @@
 </script>
 
 <template>
-  <GroupsRadioGroups>
-    <InputRadioButton   
+  <GroupRadio class="languages">
+    <InputLanguageRadio   
       v-for="loc in availableLocales"
       :obj="loc"
       v-model="lang"
       @change="changeLang"
       >
-    </InputRadioButton>
-  </GroupsRadioGroups>
+    </InputLanguageRadio>
+  </GroupRadio>
 </template>
+
+<style scoped lang="scss">
+  .languages{
+    display: flex;
+  }
+</style>
