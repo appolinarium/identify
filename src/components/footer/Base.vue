@@ -1,9 +1,7 @@
 <template>
   <footer class="base-footer">
     <slot>
-
     </slot>
-    
   </footer>
 </template>
 
