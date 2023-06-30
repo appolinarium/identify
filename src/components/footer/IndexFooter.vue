@@ -1,48 +1,53 @@
 <template>
-  <FooterBase class="centered">
+  <FooterBase class="index-footer">
 
       <TypeCopyright
-        name="Identify"
-        class="flex-1"
+        name="Indentify"
+        class="index-footer__item"
         />
   
       <ListLanguages
-        class="flex-1"/>
+        class="index-footer__item"
+        />
 
       <div 
-        class="flex-1">
+        class="index-footer__item">
         <a
-          class="documents"
+          class="index-footer__link"
           target="_blank"
-          href="https://appolinarium.github.io/indentify/style_guide"
+          href="https://appolinarium.github.io/indentify/"
           >Development documentation
         </a>
+        
         <TypeSourceCode/>
+        
       </div>
     
   </FooterBase>
 </template>
 
 <style lang="scss">
-  .centered{
+  @use 'sass:map';
+  
+  .index-footer {
     align-items: center;
-  }
-  .flex-1{
-    display: flex;
-    justify-content: center;
-    flex: 1;
-  }
 
-  .documents{
-    color: var(--el-color-info);
-    text-decoration: none;
-    font-family: 'Lato';
-    letter-spacing: 1.1px;
-    @include font-size(12px);
-    line-height: 1.1;
-    display: flex;
-    justify-content: center;
-    padding-right: 10px;
-    cursor: pointer;
+    &__item {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
+
+    &__link {
+      color: map.get($colors, 'primary');
+      text-decoration: none;
+      font-family: 'Lato';
+      letter-spacing: 1.1px;
+      @include font-size(12px);
+      line-height: 1.1;
+      display: flex;
+      justify-content: center;
+      padding-right: 10px;
+    }
   }
 </style>
