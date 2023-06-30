@@ -11,43 +11,61 @@
         />
 
       <div 
-        class="index-footer__item">
+        class="index-footer__item index-footer__list"
+        >
+
         <a
           class="index-footer__link"
           target="_blank"
           href="https://appolinarium.github.io/indentify/"
           >Development documentation
         </a>
-        
-        <TypeSourceCode/>
+        <a
+          class="index-footer__link"
+          href="https://github.com/appolinarium/indentify"
+          target="_blank"
+          >
+          <TypeSourceCode/>
+        </a>
         
       </div>
     
   </FooterBase>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
   @use 'sass:map';
   
   .index-footer {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    color: map.get($colors, 'secondary');
+    width: 100%;
+    box-sizing: border-box;
+    @include padding(0 100px);
 
     &__item {
-      display: flex;
-      justify-content: center;
       flex: 1;
     }
 
+    &__list {
+      display: flex;
+      @include rfs(16px, gap);
+    }
+
     &__link {
-      color: map.get($colors, 'primary');
+      @include pm-reset();
+      color: map.get($colors, 'secondary');
       text-decoration: none;
       font-family: 'Lato';
       letter-spacing: 1.1px;
       @include font-size(12px);
       line-height: 1.1;
-      display: flex;
-      justify-content: center;
-      padding-right: 10px;
+
+      &:hover {
+        color: map.get($colors, 'primary');
+      }
     }
   }
 </style>

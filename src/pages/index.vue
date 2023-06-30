@@ -1,59 +1,46 @@
 <template>
 
-  <HeroHeaderSubheader>
-    <template #header>
-      {{$t('app.description')}}
-    </template>
+  <div class="content">
+    <HeroHeaderSubheader>
+      <template #header>
+        {{$t('app.description')}}
+      </template>
 
-    <template #subheader>
-      <CounterUsers /> {{ $t('entry.subtitle.content') }} <a href="#">{{$t('entry.subtitle.accent') }}</a>
-    </template>
+      <template #subheader>
+        <CounterUsers />
+        {{ $t('entry.subtitle.content') }}
+        <TipBase
+          text="Hello, im tooltip"
+        >
+          {{ $t('entry.subtitle.accent') }}
+        </TipBase>
+      </template>
 
-    <template #action>
-      <InputSignUp/>
-    </template>
+      <template #action>
+        <InputSignUp/>
+      </template>
 
-  </HeroHeaderSubheader>
+    </HeroHeaderSubheader>
 
-  <FooterIndexFooter/>
+    <FooterIndexFooter/>
+  </div>
 
 </template>
 
 <style lang="scss">
   @use 'sass:map';
 
- #__app,body,#index,html{
-    height: 100vh;
- }
   html{
+    height: 100vh;
     background-color: map.get($colors, 'primary-bg');
   }
 
-  a{
-    color: map.get($colors, 'fourthy');
-  }
-  
-  .hero{
-    @include padding(120px 330px);
-    &__subheader{
-      @include margin(20px 0);
-    }
-
-  }
-
-  footer{
+  .content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 30px 110px;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    height: 100vh;
     box-sizing: border-box;
-    
-  }
-
-  .checkbox__label{
-    color: map.get($colors, 'secondary') !important;
+    @include padding(110px 0 24px 0);
   }
 </style>
