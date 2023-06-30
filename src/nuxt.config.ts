@@ -46,7 +46,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
   i18n: {
-    lazy: true,
     langDir: './locales',
     strategy: 'prefix_except_default',
     defaultLocale: 'en',

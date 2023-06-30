@@ -32,6 +32,8 @@
     &__header {
       @include pm-reset();
       @include font-size(38px);
+      @include rfs(1.5px,letter-spacing);
+      line-height: 1.5;
       font-family: 'Inter';
       font-weight: 500;
       text-align: center;
@@ -39,8 +41,9 @@
     }
 
     &__subheader {
-      @include pm-reset();
       @include font-size(16px);
+      @include rfs(1.2px,letter-spacing);
+      font-weight: 400;
       color: map.get($colors, 'secondary');
       font-family: 'Inter';
       text-align: center;
