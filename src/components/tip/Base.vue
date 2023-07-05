@@ -5,59 +5,57 @@
 
 </script>
 <template>
-  <div class="tooltip-container">
+  <div class="tooltip">
+    <span class="tooltip__text">{{text}}</span>
     <slot />
-    <div
-      class="tooltip"
-      >
-      <span
-        class="text"
-      >
-      {{ text }}
-      </span>
-    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.tooltip-container { 
-  position: relative;
-  display: inline-block;
-}
+  @use 'sass:map';
 
-.tooltip-container:hover .tooltip{
-  opacity: 1;
-}
+  // rewrite in auto-sizing
 
-.tooltip { 
-  color: #ffffff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 2px;
+  .tooltip {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
 
-  width: 120px;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px;
+    &__text {
+      position: absolute;
+      width: 125%;
+      left: -12.5%;
+      height: 28px;
+      top: 0;
+      font-size: 12px;
+      background: #000;
+      color: map.get($colors, 'white');
+      padding: 6px 10px;
+      border-radius: 2px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.28s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
 
-  opacity: 0;
-  transition: opacity .2s;
+    &__text::before {
+      position: absolute;
+      content: "";
+      height: 8px;
+      width: 8px;
+      background: black;
+      bottom: -3px;
+      left: 50%;
+      transform: translate(-50%) rotate(45deg);
+      transition: all 0.28s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
 
-  position: absolute;
-  z-index: 1;
-
-  background: #000000;
-}
-
-.text::after {
-  content: " ";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #000000 transparent transparent transparent;
-}
-
+    &:hover &__text {
+      top: -32px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
 </style>
