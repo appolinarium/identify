@@ -9,7 +9,7 @@ RUN apk add nodejs && apk add yarn
 
 ENV NITRO_PORT=8080
 
-COPY ./src /identify
+COPY ./src/front /identify
 
 WORKDIR /identify
 
