@@ -7,14 +7,13 @@ FROM alpine:latest
 RUN apk update && apk upgrade
 RUN apk add nodejs && apk add yarn
 
-ENV NITRO_PORT=8080
 
-COPY ./src/front /identify
+COPY ./ /auth
 
-WORKDIR /identify
+WORKDIR /auth
 
-RUN yarn && yarn build:ssr
+RUN yarn
 
 EXPOSE 8080
 
-CMD node .output/server/index.mjs
+CMD yarn start:prod
