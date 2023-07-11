@@ -1,10 +1,12 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import Express from 'express'
+import RegisterRouter from './routes/register'
+import cors from 'cors'
 
-@Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {}
+
+const app = Express()
+
+app.use(cors())
+app.use(RegisterRouter)
+
+
+export default app

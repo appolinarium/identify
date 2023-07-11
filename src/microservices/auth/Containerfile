@@ -1,0 +1,19 @@
+# syntax=docker/dockerfile:1
+
+# docker & podman supported
+
+FROM alpine:latest
+
+RUN apk update && apk upgrade
+RUN apk add nodejs && apk add yarn
+
+
+COPY ./ /auth
+
+WORKDIR /auth
+
+RUN yarn
+
+EXPOSE 8080
+
+CMD yarn start:prod
