@@ -17,10 +17,10 @@
   @use 'sass:map';
     .button{
         cursor: pointer;
+        display: flex;
         background-color: map.get($colors, 'thirdy-bg');
         font-family: 'Inter';
         font-weight: 500;
-        font-size: 12;
         padding: 16px 38px;
         border-radius: 4px;
         letter-spacing: 1px;

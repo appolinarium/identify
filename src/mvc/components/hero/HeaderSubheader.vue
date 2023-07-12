@@ -22,6 +22,7 @@
 
       </slot>
     </template>
+
   </HeroBase>
 </template>
 
@@ -32,7 +33,7 @@
     &__header {
       @include pm-reset();
       @include font-size(38px);
-      @include rfs(1.5px,letter-spacing);
+      letter-spacing: 1.5px;
       line-height: 1.5;
       font-family: 'Inter';
       font-weight: 500;
@@ -41,8 +42,9 @@
     }
 
     &__subheader {
+      @include pm-reset();
       @include font-size(16px);
-      @include rfs(1.2px,letter-spacing);
+      letter-spacing: 1.2px;
       font-weight: 400;
       color: map.get($colors, 'secondary');
       font-family: 'Inter';
