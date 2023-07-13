@@ -14,12 +14,7 @@
         class="index-footer__item index-footer__list"
         >
 
-        <a
-          class="index-footer__link"
-          target="_blank"
-          href="https://appolinarium.github.io/indentify/"
-          >Development documentation
-        </a>
+        <TypeDevelopmentDoc/>
         <a
           class="index-footer__link"
           href="https://github.com/appolinarium/indentify"
