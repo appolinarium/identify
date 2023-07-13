@@ -3,14 +3,16 @@
 </script>
 
 <template>
-    <span
+    <a
+        target="_blankb"
+        href="https://github.com/appolinarium/indentify"
         class="source-code"
         >
         <GithubIcon
             fill="white"
             />
         <span>{{ $t('sourceCode') }}</span>
-    </span>
+    </a>
 </template>
 
 <style scoped lang="scss">
@@ -21,7 +23,7 @@
         @include font-size(12px);
         line-height: 1.1;
         display: flex;
-        justify-content: center;
         gap: 6px;
+        text-decoration: none;
     }
 </style>

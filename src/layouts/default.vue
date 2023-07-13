@@ -7,6 +7,9 @@
 
 <style lang="scss">
   // global resets
+  *{
+    box-sizing: border-box;
+  }
 
   body {
     @include pm-reset();

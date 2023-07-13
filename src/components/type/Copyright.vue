@@ -17,6 +17,7 @@
     letter-spacing: 1.1px;
     @include font-size(12px);
     line-height: 1.1;
+    display: inline;
     justify-content: center;
   }
 </style>
