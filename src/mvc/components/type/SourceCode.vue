@@ -4,7 +4,7 @@
 
 <template>
     <a
-        target="_blankb"
+        target="_blank"
         href="https://github.com/appolinarium/indentify"
         class="source-code"
         >
