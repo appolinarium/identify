@@ -6,8 +6,9 @@
   "private": true,
   "scripts": {
     "start:dev": "nodemon --signal SIGHUP ./src/index.ts",
-    "start:prod": "ts-node ./src/index.ts",
-    "build": "tsc -b"
+    "start:prod": "node ./dist/",
+    "build": "tsc -b",
+    "clean": "rm -rf dist/"
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",
