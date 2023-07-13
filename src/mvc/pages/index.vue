@@ -1,5 +1,6 @@
 <template>
-
+  <NuxtLayout
+    name="welcome">
   <div class="content">
     <HeroHeaderSubheader>
       <template #header>
@@ -24,6 +25,7 @@
 
     <FooterIndexFooter/>
   </div>
+  </NuxtLayout>
 
 </template>
 
