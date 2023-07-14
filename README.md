@@ -1,9 +1,5 @@
 # Indentify
-Identify is a user-oriented social network that does not require registration.
-
-## Concept
-
-To use this social network, you do not need a mobile phone number, email, or any other identification data. Any information about you is optional due to the system of private keys that represent your user ID in the system. As for user orientation - this means that content is not in the first place here, as in most other modern social media projects, communication and interaction of users among themselves are in the first place here.
+Indentify is a user-oriented social network that does not require registration.
 
 ## Built in
 
@@ -11,13 +7,19 @@ To use this social network, you do not need a mobile phone number, email, or any
 - Vue
 - Nuxt
 - Socket.io
+- Pinia
+- Express
+- Postgres
+- SCSS
+- Docker/Podman
 
----
-## Contributing and development
+and a lot of other things.
 
-Visit project [Detailed documentation](https://appolinarium.github.io/indentify/)
+## Contributing
 
----
+For contributing (development and translation) visit our [detailed documentation](https://appolinarium.github.io/indentify/)
+
+or go to `/pages/_docs/` in the project source code. 
 
 ## Contributors
 <a href="https://github.com/appolinarium/indentify/graphs/contributors">
@@ -32,4 +34,4 @@ Visit project [Detailed documentation](https://appolinarium.github.io/indentify/
 
 ## License
 
-Indentify is open source software licensed as [GPL-v.3](https://github.com/appolinarium/indentify/blob/main/LICENSE).
+Indentify is open source software licensed as [GPL-V3](https://github.com/appolinarium/indentify/blob/main/LICENSE).
