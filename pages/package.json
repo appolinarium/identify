@@ -1,0 +1,10 @@
+{
+  "name": "indentify-documentation",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Indentify documentation powered by jekyll",
+  "scripts": {
+    "build": "bundle install",
+    "start": "bundle exec jekyll serve -H 0.0.0.0"
+  }
+}
