@@ -1,0 +1,31 @@
+# main links
+# main:
+#   - title: "Quick-Start Guide"
+#     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+
+docs:
+  - title: Quick start
+    children:
+      - title: 'About project'
+        url: /docs/about-project/
+  - title: 'Contributing'
+    children:
+      - title: 'Project style guide'
+        url: /docs/style-guide/
+      - title: 'Translation'
+        url: /docs/translation-guide/
+      - title: 'Development'
+        url: /docs/development-guide/
+  - title: 'Additional'
+    children:
+      - title: 'Changes'
+        url: /docs/changes/
+
